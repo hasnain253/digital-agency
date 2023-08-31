@@ -75,15 +75,19 @@
   margin-top: 25px;
   text-transform: uppercase;
 }
+.title {
+  position: relative;
+}
 .title::before {
   content: "";
   background-color: #a517ba;
   height: 5px;
   width: 200px;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 50%;
-  transform: translateY(63px);
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translate(-50%);
   display: block;
 }
 .title::after {
@@ -91,21 +95,30 @@
   background-color: #a517ba;
   height: 10px;
   width: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
-  transform: translateY(8px);
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  transform: translate(-50%);
   border-radius: 50%;
   display: block;
 }
 .button {
   box-shadow: none;
   padding: 8px 25px;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 20px;
   background-image: linear-gradient(to right, #a517ba, #5f1782);
   color: #fff;
+  transition: 0.4s all ease-in-out;
 }
+.button:hover {
+  background: linear-gradient(to right, #a517ba, #5f1782);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border: 2px solid #5f1782;
+}
+
 /* -------------------------Abous Us-------------------------------------------- */
 #about-us {
   background: #f8f9fa;
@@ -225,4 +238,10 @@ hr {
   margin-bottom: 0;
   padding-bottom: 20px;
   text-align: center;
+}
+/* ---------------------Media Querry------------------------------- */
+@media screen and (max-width: 768px) {
+  .img-fluid {
+    margin-bottom: -30px;
+  }
 }
